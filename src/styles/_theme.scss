@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use 'palettes' as palettes;
+
+@include mat.core();
+
+$djk-primary: mat.define-palette(palettes.$nemesis-soulstone-palette, 900);
+$djk-accent: mat.define-palette(palettes.$nemesis-felfire-palette, 300);
+$djk-warn: mat.define-palette(mat.$red-palette, A400);
+
+$djk-theme: mat.define-dark-theme(
+	(
+		color: (
+			primary: $djk-primary,
+			accent: $djk-accent,
+			warn: $djk-warn,
+		),
+	)
+);
+
+@include mat.all-component-themes($djk-theme);
