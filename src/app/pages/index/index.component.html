@@ -1,1 +1,7 @@
-<p>index works!</p>
+<img src="assets/logo.svg" alt="D|Enterprise logo" class="logo">
+<button mat-button class="index-button" *ngIf="auth.user | async" routerLink="/home">
+	Start
+</button>
+<button mat-button class="index-button" *ngIf="!(auth.user | async)" (click)="openDialog()">
+	Start
+</button>

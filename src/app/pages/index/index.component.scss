@@ -1,0 +1,29 @@
+:host {
+	--logo-size: 9rem;
+	width: 100%;
+	display: grid;
+	place-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+	:host {
+		--logo-size: 13rem;
+	}
+}
+
+@media only screen and (min-width: 1080px) {
+	:host {
+		--logo-size: 16rem;
+	}
+}
+
+.logo {
+	width: var(--logo-size);
+	height: var(--logo-size);
+	margin: 25vh auto auto;
+}
+
+.index-button {
+	margin-top: 6rem;
+	font-size: 1.2rem;
+}

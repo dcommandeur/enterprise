@@ -1,0 +1,10 @@
+.main-sidenav {
+	.mat-drawer-container,
+	&.mat-drawer-container {
+		background-color: inherit;
+	}
+
+	mat-drawer {
+		min-width: 16rem;
+	}
+}
