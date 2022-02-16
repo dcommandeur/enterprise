@@ -1,48 +1,52 @@
 :root {
-  --default-font: "Roboto", sans-serif;
-  --default-font-size: 1.3rem;
+	--default-font: 'Roboto', sans-serif;
+	--default-font-size: 1.3rem;
 
-  --eerie-black: #1d1e18;
-  --unsong-white: #dcdcdc;
+	--eerie-black: #1d1e18;
+	--unsong-black: #1d1d1d;
+	--unsong-white: #dcdcdc;
 
-  --nemesis-yellow-50: #d9d7ba;
-  --nemesis-yellow-100: #f2eb88;
-  --nemesis-blue-50: #849ebf;
-  --nemesis-green-50: #acf266;
-  --nemesis-green-100: #9df249;
-  --nemesis-green-200: #00ff7f;
-  --nemesis-green-300: #034001;
-  --nemesis-green-400: #022601;
-  --nemesis-purple-50: #9632d9;
-  --nemesis-purple-100: #230740;
-  --nemesis-purple-200: #1f0f26;
-  --nemesis-red-50: #1b1819;
-  --nemesis-black-50: #262626;
-  --nemesis-black-100: #0d0d0d;
-  --nemesis-black-200: #010d00;
+	--vibrant-gray: #707070;
+	--vibrant-gray-100: #424242;
 
-  --nemesis-soulstone-50: #e6e5ee;
-  --nemesis-soulstone-100: #c1bed4;
-  --nemesis-soulstone-200: #9a94b7;
-  --nemesis-soulstone-300: #756c9b;
-  --nemesis-soulstone-400: #5c4d87;
-  --nemesis-soulstone-500: #463074;
-  --nemesis-soulstone-600: #40296c;
-  --nemesis-soulstone-700: #382161;
-  --nemesis-soulstone-800: #301755;
-  --nemesis-soulstone-900: var(--nemesis-purple-100);
+	--nemesis-yellow-50: #d9d7ba;
+	--nemesis-yellow-100: #f2eb88;
+	--nemesis-blue-50: #849ebf;
+	--nemesis-green-50: #acf266;
+	--nemesis-green-100: #9df249;
+	--nemesis-green-200: #00ff7f;
+	--nemesis-green-300: #034001;
+	--nemesis-green-400: #022601;
+	--nemesis-purple-50: #9632d9;
+	--nemesis-purple-100: #230740;
+	--nemesis-purple-200: #1f0f26;
+	--nemesis-red-50: #1b1819;
+	--nemesis-black-50: #262626;
+	--nemesis-black-100: #0d0d0d;
+	--nemesis-black-200: #010d00;
 
-  --nemesis-felfire-50: #f2fde6;
-  --nemesis-felfire-100: #defac1;
-  --nemesis-felfire-200: #c7f697;
-  --nemesis-felfire-300: var(--nemesis-green-50);
-  --nemesis-felfire-400: #94ed37;
-  --nemesis-felfire-500: #84e800;
-  --nemesis-felfire-600: #72d600;
-  --nemesis-felfire-700: #58c100;
-  --nemesis-felfire-800: #3fac00;
-  --nemesis-felfire-900: #008900;
+	--nemesis-soulstone-50: #e6e5ee;
+	--nemesis-soulstone-100: #c1bed4;
+	--nemesis-soulstone-200: #9a94b7;
+	--nemesis-soulstone-300: #756c9b;
+	--nemesis-soulstone-400: #5c4d87;
+	--nemesis-soulstone-500: #463074;
+	--nemesis-soulstone-600: #40296c;
+	--nemesis-soulstone-700: #382161;
+	--nemesis-soulstone-800: #301755;
+	--nemesis-soulstone-900: var(--nemesis-purple-100);
 
-  --quest-yellow: #ffe822;
-  --quest-yellow-darker: #ffc107;
+	--nemesis-felfire-50: #f2fde6;
+	--nemesis-felfire-100: #defac1;
+	--nemesis-felfire-200: #c7f697;
+	--nemesis-felfire-300: var(--nemesis-green-50);
+	--nemesis-felfire-400: #94ed37;
+	--nemesis-felfire-500: #84e800;
+	--nemesis-felfire-600: #72d600;
+	--nemesis-felfire-700: #58c100;
+	--nemesis-felfire-800: #3fac00;
+	--nemesis-felfire-900: #008900;
+
+	--quest-yellow: #ffe822;
+	--quest-yellow-darker: #ffc107;
 }

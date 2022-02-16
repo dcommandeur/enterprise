@@ -1,0 +1,29 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+	<mat-form-field appearance="fill">
+		<mat-label>Enter your email</mat-label>
+		<input matInput placeholder="name@example.com" formControlName="email" required>
+		<mat-error *ngIf="(submitted | async) && f['email'].errors?.['required']">Please enter your email</mat-error>
+		<mat-error *ngIf="(submitted | async) && f['email'].errors?.['email']">Please enter a valid email</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="fill">
+		<mat-label>Enter your password</mat-label>
+		<input matInput [type]="(hidePassword | async) ? 'password' : 'text'" formControlName="password" required>
+		<button mat-icon-button matSuffix (click)="hidePassword.next(!(hidePassword.getValue()))" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+			<mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+		</button>
+		<mat-error *ngIf="(submitted | async) && f['password'].errors?.['required']">Please enter your password</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="fill">
+		<mat-label>Confirm your password</mat-label>
+		<input matInput [type]="(hidePassword | async) ? 'password' : 'text'" formControlName="confirmPassword" required>
+		<button mat-icon-button matSuffix (click)="hidePassword.next(!(hidePassword.getValue()))" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+			<mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+		</button>
+		<mat-error *ngIf="(submitted | async) && f['confirmPassword'].errors?.['required']">Please enter your password</mat-error>
+		<mat-error *ngIf="(submitted | async) && f['confirmPassword'].errors?.['mustMatchValidator']">Password mismatch</mat-error>
+	</mat-form-field>
+
+	<button mat-flat-button color="primary" class="signup-button" disabled>Sign up</button>
+</form>

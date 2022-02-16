@@ -1,15 +1,30 @@
 <mat-toolbar>
-	<button mat-icon-button>
+	<button mat-icon-button (click)="sidenav.emit()">
 		<mat-icon>menu</mat-icon>
 	</button>
 
-	<img src="assets/logo.svg" alt="D|Enterprise logo" class="toolbar__logo" />
+	<img src="assets/logo.svg" alt="D|Enterprise logo" class="toolbar__logo" routerLink="/" />
 
-	<h1>D|Enterprise</h1>
+	<h1 routerLink="/">D|Enterprise</h1>
 
 	<span class="spacer"></span>
 
-	<button mat-icon-button>
+	<button mat-icon-button [matMenuTriggerFor]="menu">
 		<mat-icon>more_vert</mat-icon>
 	</button>
 </mat-toolbar>
+
+<mat-menu #menu="matMenu">
+	<button mat-menu-item  routerLink="/login" *ngIf="!(auth.user | async)">
+	  <mat-icon>login</mat-icon>
+	  <span>Log in</span>
+	</button>
+	<button mat-menu-item  routerLink="/home" [disabled]="!(auth.user | async)">
+	  <mat-icon>home</mat-icon>
+	  <span>Home</span>
+	</button>
+	<button mat-menu-item *ngIf="auth.user | async" (click)="logout()">
+	  <mat-icon>logout</mat-icon>
+	  <span>Log out</span>
+	</button>
+</mat-menu>

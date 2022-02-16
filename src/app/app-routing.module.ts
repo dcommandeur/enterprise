@@ -1,20 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {
+	AngularFireAuthGuard,
+	hasCustomClaim,
+	redirectUnauthorizedTo,
+	redirectLoggedInTo,
+} from '@angular/fire/compat/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
-  {
-    path: 'index',
-    loadChildren: () => import('./pages/index').then((m) => m.IndexModule),
-  },
-  {
-    path: '**',
-    loadChildren: () =>
-      import('./pages/not-found').then((m) => m.NotFoundModule),
-  },
+	{
+		path: '',
+		loadChildren: () => import('./pages/index').then((m) => m.IndexModule),
+	},
+	{
+		path: 'login',
+		canActivate: [AngularFireAuthGuard],
+		data: { authGuardPipe: redirectLoggedInToHome },
+		loadChildren: () => import('./pages/login').then((m) => m.LoginModule),
+	},
+	{
+		path: 'home',
+		canActivate: [AngularFireAuthGuard],
+		data: { authGuardPipe: redirectUnauthorizedToLogin },
+		loadChildren: () => import('./pages/home').then((m) => m.HomeModule),
+	},
+	{
+		path: '**',
+		loadChildren: () => import('./pages/not-found').then((m) => m.NotFoundModule),
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
 })
 export class AppRoutingModule {}
