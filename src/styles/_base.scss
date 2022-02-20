@@ -23,6 +23,13 @@ body {
 	flex: 1 1 auto;
 }
 
+main.content {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-content: center;
+}
+
 .mat-drawer-content::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 	background-color: #1f1c1c;

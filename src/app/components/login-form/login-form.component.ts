@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoginFormComponent {
 	@Output() formData = new EventEmitter();
-	@Output() forgotPassword = new EventEmitter();
+	@Output() moreOptions = new EventEmitter();
 
 	hidePassword = new BehaviorSubject<Boolean>(true);
 	submitted = new BehaviorSubject<Boolean>(false);

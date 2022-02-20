@@ -11,12 +11,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class RegisterFormComponent {
 	@Output() formData = new EventEmitter();
+	@Output() moreOptions = new EventEmitter();
 
 	hidePassword = new BehaviorSubject<Boolean>(true);
 	submitted = new BehaviorSubject<Boolean>(false);
 
 	registerForm = this.fb.group(
 		{
+			name: ['', Validators.required],
 			email: ['', [Validators.required, Validators.email]],
 			password: ['', Validators.required],
 			confirmPassword: ['', Validators.required],

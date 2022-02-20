@@ -1,14 +1,24 @@
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
 mat-form-field {
 	width: 100%;
 	margin-bottom: 0.7rem;
 }
 
-.forgot-button {
-	margin-top: auto;
+.login-button {
+	width: 100%;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
 	margin-bottom: 1rem;
 }
 
-.login-button {
-	padding-left: 3rem;
-	padding-right: 3rem;
+.options-button {
+	margin-bottom: 1rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	color: #747474;
 }

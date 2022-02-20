@@ -1,7 +1,14 @@
 .toolbar {
+	background: transparent;
+
 	&__logo {
 		height: 2rem;
 		padding: 0 0.9rem 0 1rem;
 		cursor: pointer;
 	}
+}
+
+.router-link-active {
+	background: rgb(50 16 82 / 40%);
+	box-shadow: rgb(50 16 82) 5px 5px 6px 0px inset, rgb(50 16 82 / 50%) -7px -3px 5px 0px inset;
 }

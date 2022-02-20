@@ -3,9 +3,9 @@
 
 @include mat.core();
 
-$djk-primary: mat.define-palette(palettes.$nemesis-soulstone-palette, 900);
-$djk-accent: mat.define-palette(palettes.$nemesis-felfire-palette, 300);
-$djk-warn: mat.define-palette(mat.$red-palette, A400);
+$djk-primary: mat.define-palette(palettes.$nemesis-soulstone-palette, 700);
+$djk-accent: mat.define-palette(palettes.$nemesis-darkness-palette, 900);
+$djk-warn: mat.define-palette(mat.$red-palette, 700);
 
 $djk-theme: mat.define-dark-theme(
 	(

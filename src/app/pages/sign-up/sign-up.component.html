@@ -1,0 +1,25 @@
+<header class="navigation">
+	<button mat-mini-fab color="primary" class="back-button" routerLink="/login">
+		<mat-icon>arrow_back</mat-icon>
+	</button>
+	<h1 class="page-title">Sign up</h1>
+</header>
+
+<div class="container">
+	<div class="provider-container">
+		<span class="info-text">Log in by using one of these providers</span>
+		<button mat-raised-button color="basic" class="provider-button" disabled>
+			<img src="assets/microsoft_32x32.png" alt="Login with Microsoft" /> Microsoft
+		</button>
+		<button mat-raised-button color="basic" class="provider-button" (click)="loginWithGoogle()">
+			<img src="assets/google_32x32.png" alt="Login with Google" /> Google
+		</button>
+	</div>
+
+	<div class="form">
+		<djk-register-form
+			(formData)="handleRegister($event)"
+			routerLink="/login"
+		></djk-register-form>
+	</div>
+</div>

@@ -22,6 +22,18 @@ const routes: Routes = [
 		loadChildren: () => import('./pages/login').then((m) => m.LoginModule),
 	},
 	{
+		path: 'sign-up',
+		canActivate: [AngularFireAuthGuard],
+		data: { authGuardPipe: redirectLoggedInToHome },
+		loadChildren: () => import('./pages/sign-up').then((m) => m.SignUpModule),
+	},
+	{
+		path: 'forgot-password',
+		canActivate: [AngularFireAuthGuard],
+		data: { authGuardPipe: redirectLoggedInToHome },
+		loadChildren: () => import('./pages/forgot-password').then((m) => m.ForgotPasswordModule),
+	},
+	{
 		path: 'home',
 		canActivate: [AngularFireAuthGuard],
 		data: { authGuardPipe: redirectUnauthorizedToLogin },

@@ -1,21 +1,39 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 	<mat-form-field appearance="fill">
 		<mat-label>Enter your email</mat-label>
-		<input matInput placeholder="email@example.com" formControlName="email" required>
-		<mat-error *ngIf="(submitted | async) && f['email'].errors?.['required']">Please enter your email</mat-error>
-		<mat-error *ngIf="(submitted | async) && f['email'].errors?.['email']">Please enter a valid email</mat-error>
+		<input matInput placeholder="email@example.com" formControlName="email" required />
+		<mat-error *ngIf="(submitted | async) && f['email'].errors?.['required']"
+			>Please enter your email</mat-error
+		>
+		<mat-error *ngIf="(submitted | async) && f['email'].errors?.['email']"
+			>Please enter a valid email</mat-error
+		>
 	</mat-form-field>
 
-	<mat-form-field appearance="fill">
+	<mat-form-field appearance="fill" class="test">
 		<mat-label>Enter your password</mat-label>
-		<input matInput [type]="(hidePassword | async) ? 'password' : 'text'" formControlName="password" required>
-		<button mat-icon-button matSuffix (click)="hidePassword.next(!(hidePassword.getValue()))" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
-			<mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+		<input
+			matInput
+			[type]="(hidePassword | async) ? 'password' : 'text'"
+			formControlName="password"
+			required
+		/>
+		<button
+			mat-icon-button
+			matSuffix
+			(click)="hidePassword.next(!hidePassword.getValue())"
+			[attr.aria-label]="'Hide password'"
+			[attr.aria-pressed]="hidePassword"
+		>
+			<mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
 		</button>
-		<mat-error *ngIf="(submitted | async) && f['password'].errors?.['required']">Please enter your password</mat-error>
+		<mat-error *ngIf="(submitted | async) && f['password'].errors?.['required']"
+			>Please enter your password</mat-error
+		>
 	</mat-form-field>
 
-	<button mat-button class="forgot-button" (click)="forgotPassword.emit()" disabled>Forgot your password?</button>
-
-	<button mat-flat-button color="primary" class="login-button" type="submit" disabled>Log in</button>
+	<button mat-flat-button color="primary" class="login-button" type="submit">Log in</button>
+	<button mat-button class="options-button" (click)="moreOptions.emit()" type="button">
+		More options
+	</button>
 </form>
