@@ -1,10 +1,11 @@
-import { RegisterFormModule } from '@components/register-form';
-import { LoginFormModule } from '@components/login-form';
-import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
+import { LoginFormModule } from '@components/login-form';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
 	declarations: [LoginComponent],
@@ -13,7 +14,8 @@ import { LoginComponent } from './login.component';
 		LoginRoutingModule,
 		MatButtonModule,
 		LoginFormModule,
-		RegisterFormModule,
+		MatIconModule,
+		MatDialogModule,
 	],
 })
 export class LoginModule {}

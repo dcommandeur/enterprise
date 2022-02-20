@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginDialogComponent } from '@components/login-dialog';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from '@firebase/app-compat';
 
@@ -10,12 +11,8 @@ import firebase from '@firebase/app-compat';
 	styleUrls: ['./login.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit {
-	rightPanel = new BehaviorSubject<Boolean>(false);
-
-	constructor(public auth: AngularFireAuth, private router: Router) {}
-
-	ngOnInit(): void {}
+export class LoginComponent {
+	constructor(public auth: AngularFireAuth, private router: Router, public dialog: MatDialog) {}
 
 	async loginWithGoogle() {
 		try {
@@ -30,7 +27,7 @@ export class LoginComponent implements OnInit {
 		console.log(data);
 	}
 
-	handleRegister(data: any) {
-		console.log(data);
+	moreOptions() {
+		this.dialog.open(LoginDialogComponent);
 	}
 }

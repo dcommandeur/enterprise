@@ -1,5 +1,10 @@
-<mat-toolbar>
-	<button mat-icon-button (click)="sidenav.emit()">
+<mat-toolbar class="toolbar">
+	<button
+		mat-icon-button
+		(click)="sidenav.emit()"
+		@sidenavButtonTrigger
+		*ngIf="ToolbarSidenavButton"
+	>
 		<mat-icon>menu</mat-icon>
 	</button>
 
@@ -15,16 +20,31 @@
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
-	<button mat-menu-item  routerLink="/login" *ngIf="!(auth.user | async)">
-	  <mat-icon>login</mat-icon>
-	  <span>Log in</span>
+	<button
+		mat-menu-item
+		routerLink="/login"
+		routerLinkActive="router-link-active"
+		*ngIf="!(auth.user | async)"
+	>
+		<mat-icon>login</mat-icon>
+		<span>Log in</span>
 	</button>
-	<button mat-menu-item  routerLink="/home" [disabled]="!(auth.user | async)">
-	  <mat-icon>home</mat-icon>
-	  <span>Home</span>
+	<button
+		mat-menu-item
+		routerLink="/home"
+		routerLinkActive="router-link-active"
+		[disabled]="!(auth.user | async)"
+	>
+		<mat-icon>home</mat-icon>
+		<span>Home</span>
 	</button>
-	<button mat-menu-item *ngIf="auth.user | async" (click)="logout()">
-	  <mat-icon>logout</mat-icon>
-	  <span>Log out</span>
+	<button
+		mat-menu-item
+		*ngIf="auth.user | async"
+		routerLinkActive="router-link-active"
+		(click)="logout()"
+	>
+		<mat-icon>logout</mat-icon>
+		<span>Log out</span>
 	</button>
 </mat-menu>

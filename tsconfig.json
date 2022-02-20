@@ -27,7 +27,8 @@
             "@components/*": ["src/app/components/*"],
             "@models/*": ["src/app/models/*"],
             "@guards/*": ["src/app/guards/*"],
-            "@validators/*": ["src/app/validators/*"]
+            "@validators/*": ["src/app/validators/*"],
+            "@utils/*": ["src/app/utils/*"]
         },
 		"skipLibCheck": true
     },

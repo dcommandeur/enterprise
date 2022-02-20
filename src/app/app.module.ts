@@ -8,8 +8,6 @@ import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { USE_DEVICE_LANGUAGE } from '@angular/fire/compat/auth';
 import { environment } from '@env/environment';
-import { ToolbarModule } from '@components/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { AuthenticationModule } from '@components/authentication';
 
 @NgModule({
@@ -21,8 +19,6 @@ import { AuthenticationModule } from '@components/authentication';
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFireAnalyticsModule,
 		AngularFirestoreModule,
-		ToolbarModule,
-		MatSidenavModule,
 		AuthenticationModule,
 	],
 	providers: [{ provide: USE_DEVICE_LANGUAGE, useValue: true }],

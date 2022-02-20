@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { IndexRoutingModule } from './index-routing.module';
 import { IndexComponent } from './index.component';
+import { LayoutModule } from '@components/layout';
 
 @NgModule({
 	declarations: [IndexComponent],
@@ -14,6 +15,7 @@ import { IndexComponent } from './index.component';
 		MatButtonModule,
 		MatDialogModule,
 		IndexDialogModule,
+		LayoutModule,
 	],
 })
 export class IndexModule {}

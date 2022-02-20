@@ -47,3 +47,28 @@ $nemesis-felfire-palette: (
 		900: rgba(white, 0.87),
 	),
 );
+
+$nemesis-darkness-palette: (
+	50: var(--nemesis-darkness-50),
+	100: var(--nemesis-darkness-100),
+	200: var(--nemesis-darkness-200),
+	300: var(--nemesis-darkness-300),
+	400: var(--nemesis-darkness-400),
+	500: var(--nemesis-darkness-500),
+	600: var(--nemesis-darkness-600),
+	700: var(--nemesis-darkness-700),
+	800: var(--nemesis-darkness-800),
+	900: var(--nemesis-darkness-900),
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: white,
+		500: white,
+		600: rgba(white, 0.87),
+		700: rgba(white, 0.87),
+		800: rgba(white, 0.87),
+		900: rgba(white, 0.87),
+	),
+);

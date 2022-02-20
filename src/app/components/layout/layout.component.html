@@ -1,0 +1,7 @@
+<djk-toolbar [ToolbarSidenavButton]="ToolbarSidenavButton" (sidenav)="drawer.toggle()"></djk-toolbar>
+<mat-drawer-container class="main-sidenav" autosize>
+	<mat-drawer #drawer mode="side">
+	</mat-drawer>
+
+	<ng-content></ng-content>
+</mat-drawer-container>

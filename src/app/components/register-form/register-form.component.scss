@@ -1,10 +1,23 @@
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
 mat-form-field {
 	width: 100%;
 	margin-bottom: 0.7rem;
 }
 
 .signup-button {
-	margin-top: auto;
-	padding-left: 3rem;
-	padding-right: 3rem;
+	width: 100%;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	margin-bottom: 1rem;
+}
+
+.options-button {
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	margin-bottom: 1rem;
 }

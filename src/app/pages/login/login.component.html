@@ -1,42 +1,25 @@
-<div class="container" [ngClass]="{'right-panel-active' : rightPanel | async}">
-	<div class="form-container sign-up-container">
-		<div class="form">
-			<h1>Create Account</h1>
-			<div class="social-container">
-				<button mat-raised-button color="basic" class="social" disabled><img src="assets/microsoft_32x32.png" alt="Login with Microsoft"> Microsoft</button>
-				<button mat-raised-button color="basic" class="social" (click)="loginWithGoogle()"><img src="assets/google_32x32.png" alt="Login with Google"> Google</button>
-			</div>
+<header class="navigation">
+	<button mat-mini-fab color="primary" class="back-button" routerLink="/">
+		<mat-icon>arrow_back</mat-icon>
+	</button>
+	<h1 class="page-title">Log in</h1>
+</header>
 
-			<span class="text">or use your email for registration</span>
-			<djk-register-form (formData)="handleRegister($event)"></djk-register-form>
-		</div>
+<div class="container">
+	<div class="provider-container">
+		<span class="info-text">Log in by using one of these providers</span>
+		<button mat-raised-button color="basic" class="provider-button" disabled>
+			<img src="assets/microsoft_32x32.png" alt="Login with Microsoft" /> Microsoft
+		</button>
+		<button mat-raised-button color="basic" class="provider-button" (click)="loginWithGoogle()">
+			<img src="assets/google_32x32.png" alt="Login with Google" /> Google
+		</button>
 	</div>
 
-	<div class="form-container sign-in-container">
-		<div class="form">
-			<h1>Log in</h1>
-			<div class="social-container">
-				<button mat-raised-button color="basic" class="social" disabled><img src="assets/microsoft_32x32.png" alt="Login with Microsoft"> Microsoft</button>
-				<button mat-raised-button color="basic" class="social" (click)="loginWithGoogle()"><img src="assets/google_32x32.png" alt="Login with Google"> Google</button>
-			</div>
-
-			<span class="text">or use your account</span>
-			<djk-login-form (formData)="handleLogin($event)"></djk-login-form>
-		</div>
-	</div>
-
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Hello, new person!</h1>
-				<p>Enter your personal info and create a new account.</p>
-				<button mat-stroked-button class="next-button" (click)="rightPanel.next(false)">Log in</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Welcome!</h1>
-				<p>Please enter your credentials to get started. Or sign up to create a new account.</p>
-				<button mat-stroked-button class="next-button" (click)="rightPanel.next(true)">Sign up</button>
-			</div>
-		</div>
+	<div class="form">
+		<djk-login-form
+			(formData)="handleLogin($event)"
+			(moreOptions)="moreOptions()"
+		></djk-login-form>
 	</div>
 </div>
